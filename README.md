@@ -1,5 +1,4 @@
 # Birfday
-<<<<<<< HEAD
 
 ## Description
 
@@ -17,5 +16,3 @@ If you want to make a production build of this project, type `npm run build`. Th
 
 ## Author
 Sean Davis
-=======
->>>>>>> 9e853900336ede512618bff6f8ba9894b29dc02b
