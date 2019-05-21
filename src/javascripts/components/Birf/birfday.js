@@ -1,4 +1,4 @@
-import util from '../helpers/util';
+import util from '../../helpers/util';
 
 const domStringBuilder = () => {
   const domString = '<h1>Birfday</h1>';
