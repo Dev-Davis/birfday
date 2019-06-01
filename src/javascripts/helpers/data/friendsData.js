@@ -22,5 +22,6 @@ const getFriendsByUid = uid => new Promise((resolve, reject) => {
 and the friendObject is the friend input of the new friend being added */
 
 const addNewFriend = friendObject => axios.post(`${firebaseUrl}/friends.json`, friendObject);
+const deleteFriend = friendId => axios.delete(`${firebaseUrl}/friends/${friendId}.json`);
 
-export default { getFriendsByUid, addNewFriend };
+export default { getFriendsByUid, addNewFriend, deleteFriend };
