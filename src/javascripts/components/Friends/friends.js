@@ -2,7 +2,13 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import util from '../../helpers/util';
 
+import birfdayData from '../../helpers/data/birfdayData';
+
 import friendsData from '../../helpers/data/friendsData';
+import rsvpData from '../../helpers/data/rsvpData';
+
+import SMASH from '../../helpers/smash';
+
 
 // Run the getFriends function inside the then statement with the uid
 
@@ -95,8 +101,13 @@ const showFriends = (friends) => {
 const getFriends = (uid) => {
   friendsData.getFriendsByUid(uid)
     .then((friends) => {
-      console.error('friends array", friends');
-      showFriends(friends);
+      birfdayData.getBirfdayByUid(uid).then((bday) => {
+        rsvpData.getRsvpsByBirthdayUid(bday.id)
+          .then((rsvps) => {
+            const finalFriends = SMASH.friendRsvps(friends, rsvps);
+            showFriends(finalFriends);
+          });
+      });
     })
     .catch(err => console.error('no friends', err));
 };

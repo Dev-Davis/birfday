@@ -1,6 +1,6 @@
 import util from '../../helpers/util';
 
-import birfdayData from '../../helpers/birfdayData';
+import birfdayData from '../../helpers/data/birfdayData';
 
 const domStringBuilder = (uid) => {
   birfdayData.getBirfdayByUid(uid).then((birthday) => {
