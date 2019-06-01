@@ -11,7 +11,6 @@ const logoutNavbar = document.getElementById('navbar-button-logout');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
-    console.error(user);
     if (user) {
       authDiv.classList.add('hide');
       authNavbar.classList.add('hide');
